@@ -17,11 +17,12 @@ size_t _strcspn(const char *str, const char *reject)
 	while (*s)
 	{
 		const char *r = reject;
+
 		while (*r)
 		{
 			if (*s == *r)
 			{
-				return count;
+				return (count);
 			}
 			++r;
 		}
@@ -29,5 +30,5 @@ size_t _strcspn(const char *str, const char *reject)
 		++count;
 	}
 
-	return count;
+	return (count);
 }

@@ -11,7 +11,8 @@
  *Return: Always 0 (Success)
  */
 
-int main(int __attribute__((unused)) argc, char __attribute__((unused)) * argv[], char __attribute__((unused)) *envp[])
+int main(int __attribute__((unused)) argc,
+	char __attribute__((unused)) *argv[], char __attribute__((unused)) *envp[])
 {
 	char *command = NULL;
 	size_t command_len = 0;

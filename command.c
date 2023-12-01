@@ -28,6 +28,7 @@ void initialize_args_envp(char *command, char *args[], char *envp[])
 
 void execute_command(char *command, char *prog)
 {
+	int status;
 	char *args[2];
 	char *envp[1];
 
@@ -58,10 +59,13 @@ void execute_command(char *command, char *prog)
 	}
 	else
 	{
-		/* Parent process
-		 Wait for the child to complete */
-		int status;
+		/* Parent process */
+		/* Wait for the child to complete */
 		waitpid(pid, &status, 0);
-		
+		if (!WIFEXITED(status))
+		{
+			/* Command execution error */
+			_printf("Command execution error\n");
+		}
 	}
 }
