@@ -12,8 +12,7 @@
 
 void initialize_args_envp(char *command, char *args[], char *envp[])
 {
-	args[0] = command;
-	args[1] = NULL;
+	tokenize_command(command, args, MAX_COMMAND_LENGTH);
 	envp[0] = NULL;
 }
 
@@ -29,7 +28,7 @@ void initialize_args_envp(char *command, char *args[], char *envp[])
 void execute_command(char *command, char *prog)
 {
 	int status;
-	char *args[2];
+	char *args[MAX_COMMAND_LENGTH];
 	char *envp[1];
 
 	/* Fork a child process */
@@ -49,7 +48,7 @@ void execute_command(char *command, char *prog)
 		initialize_args_envp(command, args, envp);
 
 		/* Execute the command using execve */
-		if (execve(command, args, envp) == -1)
+		if (execve(args[0], args, envp) == -1)
 		{
 			/* Handle execution error */
 			_printf("%s : ", prog);
