@@ -13,5 +13,7 @@
 
 void execute_command(char *command, char *prog);
 size_t _strcspn(const char *str, const char *reject);
+void cmd_ninteractive(char *argv[]);
+void cmd_interactive(char *argv[]);
 
 #endif /* _SHELL_H_ */
