@@ -67,4 +67,5 @@ void execute_command(char *command, char *prog)
 			_printf("Command execution error\n");
 		}
 	}
+	free(command);
 }
