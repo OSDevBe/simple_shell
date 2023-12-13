@@ -11,7 +11,7 @@
  *Return: Always 0 (Success)
  */
 
-int main(int argc, char *argv[], char *envp[])
+int main(int __attribute__((unused)) argc, char __attribute__((unused)) *argv[])
 {
 	/* Check if the shell is in interactive mode */
 	int interactive = isatty(fileno(stdin));
