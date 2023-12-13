@@ -1,4 +1,4 @@
-#include "main.h"
+#include "ppheader.h"
 
 /**
  * print_char - Prints character

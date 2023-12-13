@@ -1,4 +1,4 @@
-#include "main.h"
+#include "ppheader.h"
 
 void handle_percent(const char *format, func_t f_list[], va_list ap, int *cnt);
 

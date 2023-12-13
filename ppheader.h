@@ -1,5 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _PPHEADER_H_
+#define _PPHEADER_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,5 +31,4 @@ int print_integer(va_list ap);
 int print_uint(va_list ap);
 int print_binary(va_list ap);
 
-#endif /* _MAIN_H_ */
-
+#endif /* _PPHEADER_H_ */

@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include "main.h"
+#include "ppheader.h"
 
 void execute_command(char *command, char *prog);
 size_t _strcspn(const char *str, const char *reject);
