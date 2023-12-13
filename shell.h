@@ -10,8 +10,6 @@
 #include <sys/wait.h>
 #include "main.h"
 
-#define MAX_COMMAND_LENGTH 100
-
 void execute_command(char *command, char *prog);
 size_t _strcspn(const char *str, const char *reject);
 void cmd_ninteractive(char *argv[]);
