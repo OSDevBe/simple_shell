@@ -14,7 +14,7 @@
 int main(int argc, char *argv[], char *envp[])
 {
 	/* Check if the shell is in interactive mode */
-	int interactive = isatty(fileno(stdin));
+	int interactive = isatty(STDIN_FILENO);
 
 	(void)argc;
 	(void)argv;
