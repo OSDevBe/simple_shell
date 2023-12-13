@@ -26,6 +26,7 @@ void cmd_ninteractive(char *argv[])
 		free(command);
 		command = NULL;
 	}
+	free(command);
 }
 
 /**
@@ -52,9 +53,9 @@ void cmd_interactive(char *argv[])
 		{
 			/* Handle end of file (Ctrl+D) */
 			_printf("\n");
-			/* Free allocated memory */
+			/* Free allocated memory 
 			free(command);
-			command = NULL;
+			command = NULL;*/
 			break;
 		}
 
@@ -68,4 +69,5 @@ void cmd_interactive(char *argv[])
 		free(command);
 		command = NULL;
 	}
+	free(command);
 }
