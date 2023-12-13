@@ -16,9 +16,9 @@ int main(int argc, char *argv[], char *envp[])
 	/* Check if the shell is in interactive mode */
 	int interactive = isatty(fileno(stdin));
 
-	(void)argc;
+	/* (void)argc;
 	(void)argv;
-	(void)envp;
+	(void)envp;*/
 
 	if (!interactive)
 	{
