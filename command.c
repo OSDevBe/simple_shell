@@ -50,6 +50,7 @@ void execute_command(char *command, char *prog)
 		/* Execute the command using execve */
 		if (execve(args[0], args, envp) == -1)
 		{
+			free(command);
 			/* Handle execution error */
 			_printf("%s : ", prog);
 			perror("");
@@ -67,5 +68,4 @@ void execute_command(char *command, char *prog)
 			_printf("Command execution error\n");
 		}
 	}
-	free(command);
 }
