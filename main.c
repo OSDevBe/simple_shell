@@ -31,5 +31,5 @@ int main(int argc, char *argv[], char *envp[])
 		cmd_interactive(argv);
 	}
 
-	return (EXIT_SUCCESS);
+	return (1);
 }
