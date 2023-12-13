@@ -52,7 +52,7 @@ void execute_command(char *command, char *prog)
 		{
 			free(command);
 			/* Handle execution error */
-			_printf("%s : ", prog);
+			_printf("%s: ", prog);
 			perror("");
 			exit(EXIT_FAILURE);
 		}
