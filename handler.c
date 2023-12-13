@@ -44,7 +44,7 @@ void cmd_interactive(char *argv[])
 	while (1)
 	{
 		/* Display prompt */
-		_printf("Shell> ");
+		_printf("Shell$ ");
 		fflush(stdout);
 
 		/* Read command from user using getline */
