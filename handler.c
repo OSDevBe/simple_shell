@@ -63,7 +63,6 @@ void cmd_interactive(char *argv[])
 		_printf("Shell$ ");
 		fflush(stdout);
 
-		/* Read command from user using getline */
 		if (getline(&command, &command_len, stdin) == -1)
 		{
 			/* Handle end of file (Ctrl+D) */

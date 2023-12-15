@@ -14,7 +14,7 @@
 void execute_command(char *exec, char **args, char **envp, char *prog)
 {
 	int status;
-	char ** env = environ;
+	char **env = environ;
 	/* Fork a child process */
 	pid_t pid = fork();
 
