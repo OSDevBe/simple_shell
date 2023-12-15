@@ -23,3 +23,19 @@ void tokenize_command(char *command, char *args[], size_t max_args)
 
 	args[i] = NULL;
 }
+
+/**
+ * initialize_args_envp - init
+ *
+ * @command : string command
+ * @args : args
+ * @envp : enviroment
+ *
+ * Return: VOID
+ */
+
+void initialize_args_envp(char *command, char *args[], char *envp[])
+{
+	tokenize_command(command, args, 100);
+	envp[0] = NULL;
+}

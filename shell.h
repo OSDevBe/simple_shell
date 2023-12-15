@@ -12,7 +12,8 @@
 
 extern char **environ;
 
-void execute_command(char *command, char *prog);
+void initialize_args_envp(char *command, char *args[], char *envp[]);
+void execute_command(char **args, char **envp, char *prog);
 size_t _strcspn(const char *str, const char *reject);
 void cmd_ninteractive(char *argv[]);
 void cmd_interactive(char *argv[]);

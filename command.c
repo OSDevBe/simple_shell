@@ -1,34 +1,18 @@
 #include "shell.h"
 
 /**
- * initialize_args_envp - init
- *
- * @command : string command
- * @args : args
- * @envp : enviroment
- *
- * Return: VOID
- */
-
-void initialize_args_envp(char *command, char *args[], char *envp[])
-{
-	tokenize_command(command, args, 100);
-	envp[0] = NULL;
-}
-
-/**
  * execute_command - exec command
  *
- * @command : string command
+ * @args : string command
+ * @envp : environ variable
  * @prog : name of program
  *
  *Return: VOID
  */
 
-void execute_command(char *command, char *prog)
+void execute_command(char **args, char **envp, char *prog)
 {
 	int status;
-	char *args[100], *envp[1];
 
 	/* Fork a child process */
 	pid_t pid = fork();
@@ -42,13 +26,9 @@ void execute_command(char *command, char *prog)
 	else if (pid == 0)
 	{
 		/* Child process */
-		/* Initialize args and envp */
-		initialize_args_envp(command, args, envp);
-
 		/* Execute the command using execve */
 		if (execve(args[0], args, envp) == -1)
 		{
-			free(command);
 			/* Handle execution error */
 			_printf("%s: ", prog);
 			perror("");
