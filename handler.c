@@ -93,4 +93,5 @@ void cmd_interactive(char *argv[])
 		free(command);
 		command = NULL;
 	}
+	free(command);
 }
