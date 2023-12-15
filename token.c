@@ -36,6 +36,7 @@ void tokenize_command(char *command, char *args[], size_t max_args)
 
 void initialize_args_envp(char *command, char *args[], char *envp[])
 {
+	trimSpaces(command);
 	tokenize_command(command, args, MAX_TOKEN_ARGS);
 	envp[0] = NULL;
 }

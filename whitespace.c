@@ -68,3 +68,45 @@ char *copystr(char *src)
 
 	return (dest);
 }
+
+/**
+ * trimSpaces - trim spaces
+ *
+ * @src: arg string ptr
+ *
+ * Return: void
+ */
+
+void trimSpaces(char *str)
+{
+	int start = 0, end, i;
+
+	while (str[start] == ' ' || str[start] == '\t' || str[start] == '\n')
+	{
+		start++;
+	}
+
+	if (str[start] == '\0')
+	{
+		str[0] = '\0';
+		return;
+	}
+
+	end = start;
+	while (str[end] != '\0')
+	{
+		end++;
+	}
+	end--;
+
+	while (str[end] == ' ' || str[end] == '\t' || str[end] == '\n')
+	{
+		end--;
+	}
+
+	for (i = 0; start <= end; i++, start++)
+	{
+		str[i] = str[start];
+	}
+	str[i] = '\0';
+}
