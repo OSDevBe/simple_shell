@@ -19,8 +19,9 @@ void cmd_ninteractive(char *argv[])
 		/* Remove trailing newline character */
 		command[_strcspn(command, "\n")] = '\0';
 
-		/* Execute the command */
-		execute_command(command, argv[0]);
+		if (isWhitespace(command) == 0)
+			/* Execute the command */
+			execute_command(command, argv[0]);
 
 		/* Free allocated memory */
 		free(command);
@@ -59,8 +60,9 @@ void cmd_interactive(char *argv[])
 		/* Remove trailing newline character */
 		command[_strcspn(command, "\n")] = '\0';
 
+		if (isWhitespace(command) == 0)
 		/* Execute the command */
-		execute_command(command, argv[0]);
+			execute_command(command, argv[0]);
 
 		/* Free allocated memory */
 		free(command);

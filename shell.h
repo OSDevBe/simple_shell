@@ -19,4 +19,6 @@ void cmd_interactive(char *argv[]);
 void tokenize_command(char *command, char *args[], size_t max_args);
 int _strncmp(const char *s1, const char *s2, size_t n);
 char *get_path();
+int isWhitespace(const char *str);
+
 #endif /* _SHELL_H_ */
