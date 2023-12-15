@@ -14,10 +14,11 @@
 void execute_command(char *exec, char **args, char **envp, char *prog)
 {
 	int status;
-
+	char ** env = environ;
 	/* Fork a child process */
 	pid_t pid = fork();
 
+	(void)envp;
 	if (pid == -1)
 	{
 		/* Forking error */
@@ -28,7 +29,7 @@ void execute_command(char *exec, char **args, char **envp, char *prog)
 	{
 		/* Child process */
 		/* Execute the command using execve */
-		if (execve(exec, args, envp) == -1)
+		if (execve(exec, args, env) == -1)
 		{
 			/* Handle execution error */
 			_printf("%s: ", prog);
