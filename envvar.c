@@ -39,6 +39,7 @@ char *findExecutable(char *command)
 
 	if (access(command, X_OK) == 0)
 	{
+		free(path);
 		return (copystr(command));
 	}
 
