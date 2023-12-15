@@ -53,9 +53,6 @@ void cmd_interactive(char *argv[])
 		{
 			/* Handle end of file (Ctrl+D) */
 			_printf("\n");
-			/* Free allocated memory 
-			free(command);
-			command = NULL;*/
 			break;
 		}
 

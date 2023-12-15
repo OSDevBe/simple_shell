@@ -28,8 +28,7 @@ void initialize_args_envp(char *command, char *args[], char *envp[])
 void execute_command(char *command, char *prog)
 {
 	int status;
-	char *args[100];
-	char *envp[1];
+	char *args[100], *envp[1];
 
 	/* Fork a child process */
 	pid_t pid = fork();
@@ -43,7 +42,6 @@ void execute_command(char *command, char *prog)
 	else if (pid == 0)
 	{
 		/* Child process */
-
 		/* Initialize args and envp */
 		initialize_args_envp(command, args, envp);
 

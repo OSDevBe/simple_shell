@@ -15,11 +15,12 @@ int main(int argc, char *argv[], char *envp[])
 {
 	/* Check if the shell is in interactive mode */
 	int interactive = isatty(STDIN_FILENO);
-
+	char *path = NULL;
+	(void) path;
 	(void)argc;
 	(void)argv;
 	(void)envp;
-
+	/*path = get_path();*/
 	if (!interactive)
 	{
 		/* None Interactive mode */
@@ -30,6 +31,6 @@ int main(int argc, char *argv[], char *envp[])
 		/* Interactive mode */
 		cmd_interactive(argv);
 	}
-	
+
 	return (EXIT_SUCCESS);
 }
