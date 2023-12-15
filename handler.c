@@ -80,6 +80,7 @@ void cmd_interactive(char *argv[])
 			exec = findExecutable(args[0]);
 			if (exec != NULL)
 			{
+				args[0] = exec;
 				execute_command(exec, args, envp, argv[0]);
 				free(exec);
 			}
@@ -93,5 +94,4 @@ void cmd_interactive(char *argv[])
 		free(command);
 		command = NULL;
 	}
-	free(command);
 }
