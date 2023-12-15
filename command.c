@@ -3,6 +3,7 @@
 /**
  * execute_command - exec command
  *
+ * @exec : exec name
  * @args : string command
  * @envp : environ variable
  * @prog : name of program
@@ -10,7 +11,7 @@
  *Return: VOID
  */
 
-void execute_command(char **args, char **envp, char *prog)
+void execute_command(char *exec, char **args, char **envp, char *prog)
 {
 	int status;
 
@@ -27,7 +28,7 @@ void execute_command(char **args, char **envp, char *prog)
 	{
 		/* Child process */
 		/* Execute the command using execve */
-		if (execve(args[0], args, envp) == -1)
+		if (execve(exec, args, envp) == -1)
 		{
 			/* Handle execution error */
 			_printf("%s: ", prog);
