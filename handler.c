@@ -68,6 +68,8 @@ void cmd_interactive(char *argv[])
 		{
 			/* Handle end of file (Ctrl+D) */
 			_printf("\n");
+			if (command != NULL)
+				free(command);
 			break;
 		}
 
@@ -92,5 +94,4 @@ void cmd_interactive(char *argv[])
 		free(command);
 		command = NULL;
 	}
-	free(command);
 }
