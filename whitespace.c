@@ -72,7 +72,7 @@ char *copystr(char *src)
 /**
  * trimSpaces - trim spaces
  *
- * @src: arg string ptr
+ * @str: arg string ptr
  *
  * Return: void
  */

@@ -48,4 +48,5 @@ void execute_command(char *exec, char **args, char **envp, char *prog)
 			_printf("Command execution error\n");
 		}
 	}
+	free(exec);
 }

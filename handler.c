@@ -29,7 +29,6 @@ void cmd_ninteractive(char *argv[])
 			if (exec != NULL)
 			{
 				execute_command(exec, args, envp, argv[0]);
-				free(exec);
 			}
 			else
 			{
@@ -79,12 +78,10 @@ void cmd_interactive(char *argv[])
 				free(command);
 				exit(EXIT_SUCCESS);
 			}
-			exec = findExecutable(args[0]);
+			args[0] = exec = findExecutable(args[0]);
 			if (exec != NULL)
 			{
-				args[0] = exec;
 				execute_command(exec, args, envp, argv[0]);
-				free(exec);
 			}
 			else
 			{

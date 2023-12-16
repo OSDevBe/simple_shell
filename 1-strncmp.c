@@ -38,6 +38,7 @@ int _strncmp(const char *s1, const char *s2, size_t n)
 int compExit(char *command)
 {
 	char *tmp = "exit";
+
 	if (_strncmp(command, tmp, 4) == 0)
 		return (0);
 	return (-1);
