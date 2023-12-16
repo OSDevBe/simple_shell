@@ -26,3 +26,19 @@ int _strncmp(const char *s1, const char *s2, size_t n)
 
 	return (0);
 }
+
+/**
+ * compExit - compare Exit
+ *
+ * @command : string command
+ *
+ * Return: 0 (SUCCESS) or -1
+ */
+
+int compExit(char *command)
+{
+	char *tmp = "exit";
+	if (_strncmp(command, tmp, 4) == 0)
+		return (0);
+	return (-1);
+}

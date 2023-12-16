@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /**
  * cmd_ninteractive - handel command none interactive
  *
@@ -64,18 +65,20 @@ void cmd_interactive(char *argv[])
 
 		if (getline(&command, &command_len, stdin) == -1)
 		{
-			/* Handle end of file (Ctrl+D) */
 			_printf("\n");
 			if (command != NULL)
 				free(command);
 			break;
 		}
-
 		command[_strcspn(command, "\n")] = '\0';
-
 		if (isWhitespace(command) == 0)
 		{
 			initialize_args_envp(command, args, envp);
+			if (compExit(command) == 0)
+			{
+				free(command);
+				exit(EXIT_SUCCESS);
+			}
 			exec = findExecutable(args[0]);
 			if (exec != NULL)
 			{

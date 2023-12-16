@@ -29,5 +29,6 @@ char *copystr(char *src);
 char *concatPath(char *str1, char *str2);
 void trimSpaces(char *str);
 char *findExecutable(char *command);
+int compExit(char *command);
 
 #endif /* _SHELL_H_ */
