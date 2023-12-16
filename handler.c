@@ -25,7 +25,12 @@ void cmd_ninteractive(char *argv[])
 		{
 			/* Initialize args and envp */
 			initialize_args_envp(command, args, envp);
-			exec = findExecutable(args[0]);
+			if (compExit(command) == 0)
+			{
+				free(command);
+				exit(EXIT_SUCCESS);
+			}
+			args[0] = exec = findExecutable(args[0]);
 			if (exec != NULL)
 			{
 				execute_command(exec, args, envp, argv[0]);
